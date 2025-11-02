@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
       - name: llmops-app
-        image: dataguru97/studybuddy:v17
+        image: ankits2003/studybuddyai:latest
         ports:
         - valueFrom:
             secretKeyRef:
