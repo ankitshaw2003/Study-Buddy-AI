@@ -1,7 +1,4 @@
- containerPort: 8501
-        env:
-        - name: GROQ_API_KEY
-         apiVersion: apps/v1
+apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: llmops-app
@@ -19,7 +16,10 @@ spec:
       - name: llmops-app
         image: ankits2003/studybuddyai:latest
         ports:
-        - valueFrom:
+        - containerPort: 8501
+        env:
+        - name: GROQ_API_KEY
+          valueFrom:
             secretKeyRef:
               name: groq-api-secret
               key: GROQ_API_KEY
